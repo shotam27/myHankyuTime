@@ -1,0 +1,575 @@
+{
+  "station": "総持寺",
+  "direction": "大阪梅田",
+  "day_type": "平日",
+  "total_trains": 81,
+  "trains": [
+    {
+      "time": "05:16",
+      "hour": "05",
+      "minute": "16",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "05:35",
+      "hour": "05",
+      "minute": "35",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "05:54",
+      "hour": "05",
+      "minute": "54",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "06:12",
+      "hour": "06",
+      "minute": "12",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "06:18",
+      "hour": "06",
+      "minute": "18",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "06:22",
+      "hour": "06",
+      "minute": "22",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "06:33",
+      "hour": "06",
+      "minute": "33",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "06:43",
+      "hour": "06",
+      "minute": "43",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "06:47",
+      "hour": "06",
+      "minute": "47",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "06:57",
+      "hour": "06",
+      "minute": "57",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "07:06",
+      "hour": "07",
+      "minute": "06",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "07:17",
+      "hour": "07",
+      "minute": "17",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "07:28",
+      "hour": "07",
+      "minute": "28",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "07:45",
+      "hour": "07",
+      "minute": "45",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "07:48",
+      "hour": "07",
+      "minute": "48",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "08:03",
+      "hour": "08",
+      "minute": "03",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "08:21",
+      "hour": "08",
+      "minute": "21",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "08:32",
+      "hour": "08",
+      "minute": "32",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "08:49",
+      "hour": "08",
+      "minute": "49",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "09:09",
+      "hour": "09",
+      "minute": "09",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "09:29",
+      "hour": "09",
+      "minute": "29",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "09:50",
+      "hour": "09",
+      "minute": "50",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "10:11",
+      "hour": "10",
+      "minute": "11",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "10:31",
+      "hour": "10",
+      "minute": "31",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "10:51",
+      "hour": "10",
+      "minute": "51",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "11:11",
+      "hour": "11",
+      "minute": "11",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "11:31",
+      "hour": "11",
+      "minute": "31",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "11:51",
+      "hour": "11",
+      "minute": "51",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "12:11",
+      "hour": "12",
+      "minute": "11",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "12:31",
+      "hour": "12",
+      "minute": "31",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "12:51",
+      "hour": "12",
+      "minute": "51",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "13:11",
+      "hour": "13",
+      "minute": "11",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "13:31",
+      "hour": "13",
+      "minute": "31",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "13:51",
+      "hour": "13",
+      "minute": "51",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "14:11",
+      "hour": "14",
+      "minute": "11",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "14:31",
+      "hour": "14",
+      "minute": "31",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "14:51",
+      "hour": "14",
+      "minute": "51",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "15:11",
+      "hour": "15",
+      "minute": "11",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "15:31",
+      "hour": "15",
+      "minute": "31",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "15:50",
+      "hour": "15",
+      "minute": "50",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "16:10",
+      "hour": "16",
+      "minute": "10",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "16:30",
+      "hour": "16",
+      "minute": "30",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "16:50",
+      "hour": "16",
+      "minute": "50",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "17:13",
+      "hour": "17",
+      "minute": "13",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "17:24",
+      "hour": "17",
+      "minute": "24",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "17:33",
+      "hour": "17",
+      "minute": "33",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "17:43",
+      "hour": "17",
+      "minute": "43",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "17:53",
+      "hour": "17",
+      "minute": "53",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "18:04",
+      "hour": "18",
+      "minute": "04",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "18:14",
+      "hour": "18",
+      "minute": "14",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "18:24",
+      "hour": "18",
+      "minute": "24",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "18:34",
+      "hour": "18",
+      "minute": "34",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "18:44",
+      "hour": "18",
+      "minute": "44",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "18:54",
+      "hour": "18",
+      "minute": "54",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "19:04",
+      "hour": "19",
+      "minute": "04",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "19:15",
+      "hour": "19",
+      "minute": "15",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "19:23",
+      "hour": "19",
+      "minute": "23",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "19:33",
+      "hour": "19",
+      "minute": "33",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "19:44",
+      "hour": "19",
+      "minute": "44",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "19:54",
+      "hour": "19",
+      "minute": "54",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "20:04",
+      "hour": "20",
+      "minute": "04",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "20:08",
+      "hour": "20",
+      "minute": "08",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "20:14",
+      "hour": "20",
+      "minute": "14",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "20:24",
+      "hour": "20",
+      "minute": "24",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "20:34",
+      "hour": "20",
+      "minute": "34",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "20:45",
+      "hour": "20",
+      "minute": "45",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "20:55",
+      "hour": "20",
+      "minute": "55",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "21:04",
+      "hour": "21",
+      "minute": "04",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "21:08",
+      "hour": "21",
+      "minute": "08",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "21:19",
+      "hour": "21",
+      "minute": "19",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "21:30",
+      "hour": "21",
+      "minute": "30",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "21:43",
+      "hour": "21",
+      "minute": "43",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "21:55",
+      "hour": "21",
+      "minute": "55",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "22:08",
+      "hour": "22",
+      "minute": "08",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "22:21",
+      "hour": "22",
+      "minute": "21",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "22:31",
+      "hour": "22",
+      "minute": "31",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "22:46",
+      "hour": "22",
+      "minute": "46",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "23:00",
+      "hour": "23",
+      "minute": "00",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "23:14",
+      "hour": "23",
+      "minute": "14",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "23:29",
+      "hour": "23",
+      "minute": "29",
+      "type": "普通",
+      "destination": "大阪梅田"
+    },
+    {
+      "time": "23:44",
+      "hour": "23",
+      "minute": "44",
+      "type": "普通",
+      "destination": "大阪梅田"
+    }
+  ]
+}

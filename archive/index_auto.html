@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>総持寺駅 梅田方面 時刻表</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .station-name {
+            font-size: 36px;
+            font-weight: bold;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .current-time {
+            font-size: 28px;
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+
+        .next-train {
+            font-size: 120px;
+            font-weight: bold;
+            color: #0f0;
+            text-shadow: 0 0 20px #0f0;
+            margin-bottom: 20px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .direction {
+            font-size: 48px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .time-until {
+            font-size: 36px;
+            color: #ff0;
+            margin-top: 20px;
+        }
+
+        .error {
+            font-size: 32px;
+            color: #f00;
+        }
+
+        .loading {
+            font-size: 48px;
+            color: #fff;
+        }
+
+        .last-update {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            font-size: 16px;
+            color: #666;
+        }
+
+        .data-source {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            font-size: 16px;
+            color: #666;
+        }
+
+        .day-type {
+            font-size: 20px;
+            color: #0af;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="station-name">阪急 総持寺駅</div>
+        <div class="current-time" id="currentTime">--:--:--</div>
+        <div class="day-type" id="dayType">--ダイヤ</div>
+        <div class="direction">梅田方面</div>
+        <div class="next-train" id="display">
+            <span class="loading">読み込み中...</span>
+        </div>
+        <div class="time-until" id="timeUntil"></div>
+    </div>
+    <div class="data-source">平日・休日自動判別</div>
+    <div class="last-update" id="lastUpdate"></div>
+
+    <script src="app_auto.js"></script>
+</body>
+</html>

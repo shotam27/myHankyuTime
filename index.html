@@ -43,7 +43,7 @@
         }
 
         .next-train {
-            font-size: 120px;
+            font-size: 90px;
             font-weight: bold;
             color: #0f0;
             text-shadow: 0 0 20px #0f0;
@@ -152,16 +152,15 @@
         }
 
         .station-info {
-            position: fixed;
-            top: 20px;
+            position: absolute;
+            top: 50%;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, -50%);
             background-color: rgba(100, 0, 100, 0.8);
-            padding: 15px 25px;
+            padding: 25px 35px;
             border-radius: 10px;
             color: #fff;
             border: 3px solid #f0f;
-            width: 280px;
             text-align: center;
         }
 
@@ -176,6 +175,41 @@
             font-weight: bold;
             color: #fff;
         }
+
+        .station-info .station-name {
+            font-size: 36px;
+            font-weight: bold;
+            color: #fff;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .station-info .day-type {
+            font-size: 20px;
+            color: #0af;
+            margin-bottom: 20px;
+        }
+
+        .station-info .current-time {
+            font-size: 28px;
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+
+        .station-info .next-train {
+            font-size: 90px;
+            font-weight: bold;
+            color: #0f0;
+            text-shadow: 0 0 20px #0f0;
+            margin-bottom: 15px;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .station-info .time-until {
+            font-size: 36px;
+            color: #ff0;
+            margin-top: 15px;
+        }
     </style>
 </head>
 <body>
@@ -187,12 +221,8 @@
     <div class="station-info" id="stationInfo">
         <div class="label">駅情報</div>
         <div class="station" id="stationName">阪急 総持寺駅</div>
-    </div>
-    <div class="container">
-        <div class="flex-col">        
-            <div class="station-name">阪急 梅田方面</div>
-            <div class="day-type" id="dayType">--ダイヤ</div>
-        </div>
+        <div class="station-name">梅田方面</div>
+        <div class="day-type" id="dayType">--ダイヤ</div>
         <div class="current-time" id="currentTime">--:--:--</div>
         <div class="next-train" id="display">
             <span class="loading">読み込み中...</span>

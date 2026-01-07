@@ -143,7 +143,7 @@ function updateDisplay() {
         const nextTrainTime = findNextTrain();
         
         if (nextTrainTime) {
-            document.getElementById('display').innerText = `普通 ${nextTrainTime}`;
+            document.getElementById('display').innerText = `${nextTrainTime}`;
             
             const minutesUntil = getTimeUntil(nextTrainTime);
             document.getElementById('timeUntil').innerText = `あと ${minutesUntil} 分`;
@@ -173,10 +173,10 @@ function updateDisplay() {
         const garbageElement = document.getElementById('garbageDay');
         const tomorrowGarbage = getTomorrowGarbage();
         if (tomorrowGarbage) {
-            garbageElement.innerText = `🗑️ 明日は ${tomorrowGarbage} の日`;
+            garbageElement.innerText = `🗑️ 明日は\n${tomorrowGarbage}\nの日`;
             garbageElement.classList.add('today');
         } else {
-            garbageElement.innerText = '明日はごみ回収なし';
+            garbageElement.innerText = '明日は\nごみ回収なし';
             garbageElement.classList.remove('today');
         }
         garbageElement.style.display = 'block';

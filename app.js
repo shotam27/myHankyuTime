@@ -201,7 +201,7 @@ function updateCurrentTime() {
     
     // アトランタ時間を更新
     const atlantaTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/New_York' }));
-    const atlantaStr = `${atlantaTime.getHours().toString().padStart(2, '0')}:${atlantaTime.getMinutes().toString().padStart(2, '0')}:${atlantaTime.getSeconds().toString().padStart(2, '0')}`;
+    const atlantaStr = `${atlantaTime.getHours().toString().padStart(2, '0')}:${atlantaTime.getMinutes().toString().padStart(2, '0')}`;
     document.getElementById('atlantaTimeValue').innerText = atlantaStr;
 }
 

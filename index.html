@@ -16,39 +16,71 @@
             color: #0f0;
             font-family: 'Arial', 'Helvetica', sans-serif;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             overflow: hidden;
-        }
-
-        .container {
-            text-align: center;
+            gap: 10px;
             padding: 20px;
-            width: 100%;
         }
 
-        .station-name {
-            font-size: 36px;
-            font-weight: bold;
+        .garbage-day {
+            flex: 1;
+            background-color: rgba(0, 100, 0, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            font-size: 80px;
             color: #fff;
-            margin-bottom: 20px;
-        }
-
-        .current-time {
-            font-size: 28px;
-            color: #aaa;
-            margin-bottom: 30px;
-        }
-
-        .next-train {
-            font-size: 90px;
             font-weight: bold;
-            color: #0f0;
-            text-shadow: 0 0 20px #0f0;
-            margin-bottom: 20px;
-            animation: pulse 2s ease-in-out infinite;
+            border: 3px solid #0f0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: calc(100vh - 40px);
+        }
+
+        .garbage-day.today {
+            background-color: rgba(255, 100, 0, 0.9);
+            border-color: #ff0;
+            animation: blink 1s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
+
+        .atlanta-time {
+            flex: 1;
+            background-color: rgba(0, 50, 100, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            color: #fff;
+            border: 3px solid #0af;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: calc(100vh - 40px);
+            font-size: 80px;
+        }
+
+        .station-info {
+            flex: 1;
+            background-color: rgba(100, 0, 100, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            color: #fff;
+            border: 3px solid #f0f;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: calc(100vh - 40px);
+            font-size: 80px;
         }
 
         @keyframes pulse {
@@ -56,26 +88,12 @@
             50% { opacity: 0.7; }
         }
 
-        .direction {
-            font-size: 48px;
-            color: #fff;
-            margin-bottom: 10px;
-        }
-
-        .time-until {
-            font-size: 36px;
-            color: #ff0;
-            margin-top: 20px;
-        }
-
-        .error {
-            font-size: 32px;
-            color: #f00;
-        }
-
-        .loading {
-            font-size: 48px;
-            color: #fff;
+        .station-info .next-train {
+            color: #0f0;
+            text-shadow: 0 0 20px #0f0;
+            animation: pulse 2s ease-in-out infinite;
+            font-size: 80px;
+            font-weight: bold;
         }
 
         .last-update {
@@ -93,142 +111,23 @@
             font-size: 16px;
             color: #666;
         }
-
-        .day-type {
-            font-size: 20px;
-            color: #0af;
-            margin-bottom: 10px;
-        }
-
-        .garbage-day {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: rgba(0, 100, 0, 0.8);
-            padding: 15px 25px;
-            border-radius: 10px;
-            font-size: 24px;
-            color: #fff;
-            font-weight: bold;
-            border: 3px solid #0f0;
-            width: 280px;
-            text-align: center;
-        }
-
-        .garbage-day.today {
-            background-color: rgba(255, 100, 0, 0.9);
-            border-color: #ff0;
-            animation: blink 1s ease-in-out infinite;
-        }
-
-        @keyframes blink {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.6; }
-        }
-
-        .atlanta-time {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            background-color: rgba(0, 50, 100, 0.8);
-            padding: 15px 25px;
-            border-radius: 10px;
-            color: #fff;
-            border: 3px solid #0af;
-            width: 280px;
-            text-align: center;
-        }
-
-        .atlanta-time .label {
-            font-size: 18px;
-            color: #aaa;
-            margin-bottom: 5px;
-        }
-
-        .atlanta-time .time {
-            font-size: 24px;
-            font-weight: bold;
-            color: #0ff;
-        }
-
-        .station-info {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(100, 0, 100, 0.8);
-            padding: 25px 35px;
-            border-radius: 10px;
-            color: #fff;
-            border: 3px solid #f0f;
-            text-align: center;
-        }
-
-        .station-info .label {
-            font-size: 18px;
-            color: #aaa;
-            margin-bottom: 5px;
-        }
-
-        .station-info .station {
-            font-size: 24px;
-            font-weight: bold;
-            color: #fff;
-        }
-
-        .station-info .station-name {
-            font-size: 36px;
-            font-weight: bold;
-            color: #fff;
-            margin-top: 20px;
-            margin-bottom: 10px;
-        }
-
-        .station-info .day-type {
-            font-size: 20px;
-            color: #0af;
-            margin-bottom: 20px;
-        }
-
-        .station-info .current-time {
-            font-size: 28px;
-            color: #aaa;
-            margin-bottom: 20px;
-        }
-
-        .station-info .next-train {
-            font-size: 90px;
-            font-weight: bold;
-            color: #0f0;
-            text-shadow: 0 0 20px #0f0;
-            margin-bottom: 15px;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        .station-info .time-until {
-            font-size: 36px;
-            color: #ff0;
-            margin-top: 15px;
-        }
     </style>
 </head>
 <body>
-    <div class="garbage-day" id="garbageDay"></div>
     <div class="atlanta-time" id="atlantaTime">
-        <div class="label">🇺🇸 アトランタ</div>
-        <div class="time" id="atlantaTimeValue">--:--:--</div>
+        <div>🇺🇸 アトランタ</div>
+        <div id="atlantaTimeValue">--:--:--</div>
     </div>
     <div class="station-info" id="stationInfo">
-        <div class="label">駅情報</div>
-        <div class="station" id="stationName">阪急 総持寺駅</div>
-        <div class="station-name">梅田方面</div>
-        <div class="day-type" id="dayType">--ダイヤ</div>
-        <div class="current-time" id="currentTime">--:--:--</div>
+        <div id="stationName">阪急 総持寺駅</div>
+        <div id="dayType">--ダイヤ</div>
+        <div id="currentTime">--:--:--</div>
         <div class="next-train" id="display">
-            <span class="loading">読み込み中...</span>
+            <span>読み込み中...</span>
         </div>
-        <div class="time-until" id="timeUntil"></div>
+        <div id="timeUntil"></div>
     </div>
+    <div class="garbage-day" id="garbageDay"></div>
     <div class="data-source">平日・休日自動判別</div>
     <div class="last-update" id="lastUpdate"></div>
 

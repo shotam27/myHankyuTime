@@ -175,9 +175,9 @@ function updateDisplay() {
         if (tomorrowGarbage) {
             garbageElement.innerText = `🗑️ 明日は ${tomorrowGarbage} の日`;
             garbageElement.classList.add('today');
+            garbageElement.style.display = 'block';
         } else {
-            garbageElement.innerText = '';
-            garbageElement.classList.remove('today');
+            garbageElement.style.display = 'none';
         }
         
         // 最終更新時刻を表示

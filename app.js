@@ -175,10 +175,11 @@ function updateDisplay() {
         if (tomorrowGarbage) {
             garbageElement.innerText = `🗑️ 明日は ${tomorrowGarbage} の日`;
             garbageElement.classList.add('today');
-            garbageElement.style.display = 'block';
         } else {
-            garbageElement.style.display = 'none';
+            garbageElement.innerText = '明日はごみ回収なし';
+            garbageElement.classList.remove('today');
         }
+        garbageElement.style.display = 'block';
         
         // 最終更新時刻を表示
         const now = new Date();

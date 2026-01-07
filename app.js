@@ -52,11 +52,12 @@ function getWeekOfMonth(date) {
     return Math.ceil((day + firstDay.getDay()) / 7);
 }
 
-// 今日のゴミの日を取得
-function getTodayGarbage() {
-    const now = new Date();
-    const day = now.getDay(); // 0-6
-    const week = getWeekOfMonth(now);
+// 明日のゴミの日を取得
+function getTomorrowGarbage() {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    const day = tomorrow.getDay(); // 0-6
+    const week = getWeekOfMonth(tomorrow);
     
     const garbage = [];
     
@@ -170,9 +171,9 @@ function updateDisplay() {
         
         // ゴミの日を表示
         const garbageElement = document.getElementById('garbageDay');
-        const todayGarbage = getTodayGarbage();
-        if (todayGarbage) {
-            garbageElement.innerText = `🗑️ 今日は ${todayGarbage} の日`;
+        const tomorrowGarbage = getTomorrowGarbage();
+        if (tomorrowGarbage) {
+            garbageElement.innerText = `🗑️ 明日は ${tomorrowGarbage} の日`;
             garbageElement.classList.add('today');
         } else {
             garbageElement.innerText = '';

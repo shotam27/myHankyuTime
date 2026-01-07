@@ -167,11 +167,11 @@ class TimetableApp:
         day_of_month = date.day
         return (day_of_month + first_day.weekday()) // 7 + 1
     
-    def get_today_garbage(self):
-        """今日のゴミの日を取得"""
-        now = datetime.now()
-        day = now.weekday()  # 0=月, 1=火, ..., 6=日
-        week = self.get_week_of_month(now)
+    def get_tomorrow_garbage(self):
+        """明日のゴミの日を取得"""
+        tomorrow = datetime.now() + timedelta(days=1)
+        day = tomorrow.weekday()  # 0=月, 1=火, ..., 6=日
+        week = self.get_week_of_month(tomorrow)
         
         garbage = []
         
@@ -248,10 +248,10 @@ class TimetableApp:
             self.day_type_label.config(text=day_type)
             
             # ゴミの日表示
-            garbage = self.get_today_garbage()
+            garbage = self.get_tomorrow_garbage()
             if garbage:
                 self.garbage_label.config(
-                    text=f"🗑️ 今日は {garbage} の日",
+                    text=f"🗑️ 明日は {garbage} の日",
                     bg='orange'
                 )
             else:

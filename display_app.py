@@ -7,6 +7,7 @@
 
 import tkinter as tk
 from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo
 
 # 時刻表データ（平日・大阪梅田方面）
 TIMETABLE_WEEKDAY = [
@@ -65,6 +66,31 @@ class TimetableApp:
             pady=10
         )
         self.garbage_label.place(x=10, y=10)
+        
+        # アトランタ時間表示（左上）
+        self.atlanta_frame = tk.Frame(root, bg='navy')
+        self.atlanta_frame.place(x=10, y=80)
+        
+        tk.Label(
+            self.atlanta_frame,
+            text="🇺🇸 アトランタ",
+            font=('Arial', 14),
+            bg='navy',
+            fg='gray',
+            padx=10,
+            pady=5
+        ).pack()
+        
+        self.atlanta_time_label = tk.Label(
+            self.atlanta_frame,
+            text="--:--:--",
+            font=('Arial', 20, 'bold'),
+            bg='navy',
+            fg='cyan',
+            padx=10,
+            pady=5
+        )
+        self.atlanta_time_label.pack()
         
         # タイトル
         self.title_label = tk.Label(
@@ -247,6 +273,18 @@ class TimetableApp:
         """現在時刻を更新"""
         now = datetime.now()
         self.time_label.config(text=f"現在時刻: {now.strftime('%H:%M:%S')}")
+        
+        # アトランタ時間を更新
+        try:
+            atlanta_now = datetime.now(ZoneInfo('America/New_York'))
+            self.atlanta_time_label.config(text=atlanta_now.strftime('%H:%M:%S'))
+        except:
+            # Python 3.8以前の場合はpytzを使用
+            from datetime import timezone
+            atlanta_offset = timedelta(hours=-5)  # EST
+            atlanta_now = datetime.now(timezone(atlanta_offset))
+            self.atlanta_time_label.config(text=atlanta_now.strftime('%H:%M:%S'))
+        
         # 1秒ごとに更新
         self.root.after(1000, self.update_current_time)
 

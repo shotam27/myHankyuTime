@@ -123,10 +123,37 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0.6; }
         }
+
+        .atlanta-time {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(0, 50, 100, 0.8);
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 20px;
+            color: #fff;
+            border: 2px solid #0af;
+        }
+
+        .atlanta-time .label {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .atlanta-time .time {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0ff;
+        }
     </style>
 </head>
 <body>
     <div class="garbage-day" id="garbageDay"></div>
+    <div class="atlanta-time" id="atlantaTime">
+        <div class="label">🇺🇸 アトランタ</div>
+        <div class="time" id="atlantaTimeValue">--:--:--</div>
+    </div>
     <div class="container">
         <div class="station-name">阪急 総持寺駅</div>
         <div class="current-time" id="currentTime">--:--:--</div>

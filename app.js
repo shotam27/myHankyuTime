@@ -196,6 +196,11 @@ function updateCurrentTime() {
     const now = new Date();
     const timeStr = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`;
     document.getElementById('currentTime').innerText = timeStr;
+    
+    // アトランタ時間を更新
+    const atlantaTime = new Date(now.toLocaleString('en-US', { timeZone: 'America/New_York' }));
+    const atlantaStr = `${atlantaTime.getHours().toString().padStart(2, '0')}:${atlantaTime.getMinutes().toString().padStart(2, '0')}:${atlantaTime.getSeconds().toString().padStart(2, '0')}`;
+    document.getElementById('atlantaTimeValue').innerText = atlantaStr;
 }
 
 // 初期化

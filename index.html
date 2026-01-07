@@ -26,10 +26,9 @@
 
         .garbage-day {
             flex: 1;
-            background-color: rgba(0, 100, 0, 0.8);
             padding: 30px;
             border-radius: 10px;
-            font-size: 80px;
+            font-size: 60px;
             color: #fff;
             font-weight: bold;
             border: 3px solid #0f0;
@@ -38,10 +37,11 @@
             align-items: center;
             justify-content: center;
             height: calc(100vh - 40px);
+            writing-mode: vertical-rl;
+            text-orientation: upright;
         }
 
         .garbage-day.today {
-            background-color: rgba(255, 100, 0, 0.9);
             border-color: #ff0;
             animation: blink 1s ease-in-out infinite;
         }
@@ -53,7 +53,6 @@
 
         .atlanta-time {
             flex: 1;
-            background-color: rgba(0, 50, 100, 0.8);
             padding: 30px;
             border-radius: 10px;
             color: #fff;
@@ -64,12 +63,20 @@
             align-items: center;
             justify-content: center;
             height: calc(100vh - 40px);
+            gap: 20px;
+        }
+
+        .atlanta-time .label {
+            font-size: 40px;
+        }
+
+        .atlanta-time .time {
             font-size: 80px;
+            font-weight: bold;
         }
 
         .station-info {
             flex: 1;
-            background-color: rgba(100, 0, 100, 0.8);
             padding: 30px;
             border-radius: 10px;
             color: #fff;
@@ -80,7 +87,27 @@
             align-items: center;
             justify-content: center;
             height: calc(100vh - 40px);
-            font-size: 80px;
+            gap: 15px;
+        }
+
+        .station-info .station-name {
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        .station-info .day-type {
+            font-size: 35px;
+            color: #0af;
+        }
+
+        .station-info .current-time {
+            font-size: 45px;
+            color: #aaa;
+        }
+
+        .station-info .time-until {
+            font-size: 45px;
+            color: #ff0;
         }
 
         @keyframes pulse {
@@ -115,17 +142,17 @@
 </head>
 <body>
     <div class="atlanta-time" id="atlantaTime">
-        <div>🇺🇸 アトランタ</div>
-        <div id="atlantaTimeValue">--:--:--</div>
+        <div class="label">🇺🇸 アトランタ</div>
+        <div class="time" id="atlantaTimeValue">--:--:--</div>
     </div>
     <div class="station-info" id="stationInfo">
-        <div id="stationName">阪急 総持寺駅</div>
-        <div id="dayType">--ダイヤ</div>
-        <div id="currentTime">--:--:--</div>
+        <div class="station-name">阪急 梅田方面</div>
+        <div class="day-type" id="dayType">--ダイヤ</div>
+        <div class="current-time" id="currentTime">--:--:--</div>
         <div class="next-train" id="display">
             <span>読み込み中...</span>
         </div>
-        <div id="timeUntil"></div>
+        <div class="time-until" id="timeUntil"></div>
     </div>
     <div class="garbage-day" id="garbageDay"></div>
     <div class="data-source">平日・休日自動判別</div>

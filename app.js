@@ -38,6 +38,50 @@ const TIMETABLE_HOLIDAY = [
     "23:00", "23:14", "23:29", "23:44"
 ];
 
+// ゴミの日データ
+const GARBAGE_SCHEDULE = {
+    // 0: 日, 1: 月, 2: 火, 3: 水, 4: 木, 5: 金, 6: 土
+    3: '普通ごみ',  // 水曜日
+    6: '普通ごみ',  // 土曜日
+};
+
+// 第n週を計算
+function getWeekOfMonth(date) {
+    const firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+    const day = date.getDate();
+    return Math.ceil((day + firstDay.getDay()) / 7);
+}
+
+// 今日のゴミの日を取得
+function getTodayGarbage() {
+    const now = new Date();
+    const day = now.getDay(); // 0-6
+    const week = getWeekOfMonth(now);
+    
+    const garbage = [];
+    
+    // 毎週のゴミ
+    if (GARBAGE_SCHEDULE[day]) {
+        garbage.push(GARBAGE_SCHEDULE[day]);
+    }
+    
+    // 第n週のゴミ
+    if (day === 5 && (week === 1 || week === 3)) { // 第1・3金曜日
+        garbage.push('ペットボトル');
+    }
+    if (day === 1 && week === 3) { // 第3月曜日
+        garbage.push('古紙・古布');
+    }
+    if (day === 2 && week === 1) { // 第1火曜日
+        garbage.push('小型粗大ごみ');
+    }
+    if (day === 2 && week === 3) { // 第3火曜日
+        garbage.push('大型粗大ごみ');
+    }
+    
+    return garbage.length > 0 ? garbage.join('・') : null;
+}
+
 // 曜日を判定（平日 or 休日）
 function isHoliday() {
     const now = new Date();
@@ -123,6 +167,17 @@ function updateDisplay() {
         // ダイヤ種別を表示
         const dayType = isHoliday() ? '休日' : '平日';
         document.getElementById('dayType').innerText = `${dayType}ダイヤ`;
+        
+        // ゴミの日を表示
+        const garbageElement = document.getElementById('garbageDay');
+        const todayGarbage = getTodayGarbage();
+        if (todayGarbage) {
+            garbageElement.innerText = `🗑️ 今日は ${todayGarbage} の日`;
+            garbageElement.classList.add('today');
+        } else {
+            garbageElement.innerText = '';
+            garbageElement.classList.remove('today');
+        }
         
         // 最終更新時刻を表示
         const now = new Date();

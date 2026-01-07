@@ -99,9 +99,34 @@
             color: #0af;
             margin-bottom: 10px;
         }
+
+        .garbage-day {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(0, 100, 0, 0.8);
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-size: 24px;
+            color: #fff;
+            font-weight: bold;
+            border: 3px solid #0f0;
+        }
+
+        .garbage-day.today {
+            background-color: rgba(255, 100, 0, 0.9);
+            border-color: #ff0;
+            animation: blink 1s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
+        }
     </style>
 </head>
 <body>
+    <div class="garbage-day" id="garbageDay"></div>
     <div class="container">
         <div class="station-name">阪急 総持寺駅</div>
         <div class="current-time" id="currentTime">--:--:--</div>

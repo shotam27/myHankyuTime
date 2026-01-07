@@ -179,7 +179,7 @@ function updateDisplay() {
             garbageElement.innerText = '明日は\nごみ回収なし';
             garbageElement.classList.remove('today');
         }
-        garbageElement.style.display = 'block';
+        garbageElement.style.display = 'flex';
         
         // 最終更新時刻を表示
         const now = new Date();

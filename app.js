@@ -196,7 +196,7 @@ function updateDisplay() {
 // 現在時刻を更新
 function updateCurrentTime() {
     const now = new Date();
-    const timeStr = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`;
+    const timeStr = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
     document.getElementById('currentTime').innerText = timeStr;
     
     // アトランタ時間を更新

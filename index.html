@@ -111,6 +111,8 @@
             color: #fff;
             font-weight: bold;
             border: 3px solid #0f0;
+            width: 280px;
+            text-align: center;
         }
 
         .garbage-day.today {
@@ -131,20 +133,48 @@
             background-color: rgba(0, 50, 100, 0.8);
             padding: 15px 25px;
             border-radius: 10px;
-            font-size: 20px;
             color: #fff;
-            border: 2px solid #0af;
+            border: 3px solid #0af;
+            width: 280px;
+            text-align: center;
         }
 
         .atlanta-time .label {
-            font-size: 14px;
+            font-size: 18px;
             color: #aaa;
+            margin-bottom: 5px;
         }
 
         .atlanta-time .time {
             font-size: 24px;
             font-weight: bold;
             color: #0ff;
+        }
+
+        .station-info {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(100, 0, 100, 0.8);
+            padding: 15px 25px;
+            border-radius: 10px;
+            color: #fff;
+            border: 3px solid #f0f;
+            width: 280px;
+            text-align: center;
+        }
+
+        .station-info .label {
+            font-size: 18px;
+            color: #aaa;
+            margin-bottom: 5px;
+        }
+
+        .station-info .station {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
         }
     </style>
 </head>
@@ -154,11 +184,16 @@
         <div class="label">🇺🇸 アトランタ</div>
         <div class="time" id="atlantaTimeValue">--:--:--</div>
     </div>
+    <div class="station-info" id="stationInfo">
+        <div class="label">駅情報</div>
+        <div class="station" id="stationName">阪急 総持寺駅</div>
+    </div>
     <div class="container">
-        <div class="station-name">阪急 総持寺駅</div>
+        <div class="flex-col">        
+            <div class="station-name">阪急 梅田方面</div>
+            <div class="day-type" id="dayType">--ダイヤ</div>
+        </div>
         <div class="current-time" id="currentTime">--:--:--</div>
-        <div class="day-type" id="dayType">--ダイヤ</div>
-        <div class="direction">梅田方面</div>
         <div class="next-train" id="display">
             <span class="loading">読み込み中...</span>
         </div>

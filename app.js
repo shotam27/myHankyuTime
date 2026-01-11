@@ -19,9 +19,8 @@ const GARBAGE_SCHEDULE = {
 
 // 第n週を計算
 function getWeekOfMonth(date) {
-    const firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
-    const day = date.getDate();
-    return Math.ceil((day + firstDay.getDay()) / 7);
+    // その曜日が月の中で第何回目かを計算
+    return Math.floor((date.getDate() - 1) / 7) + 1;
 }
 
 // 明日のゴミの日を取得

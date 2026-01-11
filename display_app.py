@@ -162,10 +162,8 @@ class TimetableApp:
         return day >= 5  # 5=土曜, 6=日曜
     
     def get_week_of_month(self, date):
-        """第n週を計算"""
-        first_day = date.replace(day=1)
-        day_of_month = date.day
-        return (day_of_month + first_day.weekday()) // 7 + 1
+        """その曜日が月の中で第何回目かを計算"""
+        return (date.day - 1) // 7 + 1
     
     def get_tomorrow_garbage(self):
         """明日のゴミの日を取得"""

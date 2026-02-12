@@ -1,0 +1,14 @@
+[Unit]
+Description=Auto Cast Time Table
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi
+ExecStart=/home/pi/auto_cast.sh
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

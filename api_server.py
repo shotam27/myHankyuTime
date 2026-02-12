@@ -53,19 +53,28 @@ class APIHandler(BaseHTTPRequestHandler):
         elif parsed_path.path == '/api/cast_music':
             # YouTube MusicをNest Hubにキャスト
             params = parse_qs(parsed_path.query)
-            url = params.get('url', [None])[0]
+            content_id = params.get('content_id', [None])[0]
             
-            if url:
+            if content_id:
                 try:
+                    # まず現在のキャストを停止
                     subprocess.run(
-                        ['/home/pi/.local/bin/catt', '-d', 'キッチン', 'cast', url],
+                        ['/home/pi/.local/bin/catt', '-d', 'キッチン', 'stop'],
+                        check=False
+                    )
+                    # 少し待機
+                    subprocess.run(['sleep', '1'])
+                    # content_idを使ってYouTube動画として再生
+                    youtube_url = f'https://www.youtube.com/watch?v={content_id}'
+                    subprocess.run(
+                        ['/home/pi/.local/bin/catt', '-d', 'キッチン', 'cast', youtube_url],
                         check=True
                     )
                     self.wfile.write(json.dumps({'status': 'success'}).encode('utf-8'))
                 except Exception as e:
                     self.wfile.write(json.dumps({'error': str(e)}).encode('utf-8'))
             else:
-                self.wfile.write(json.dumps({'error': 'No URL provided'}).encode('utf-8'))
+                self.wfile.write(json.dumps({'error': 'No content_id provided'}).encode('utf-8'))
         else:
             self.wfile.write(json.dumps({'error': 'Unknown endpoint'}).encode('utf-8'))
 

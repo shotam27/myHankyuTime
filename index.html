@@ -225,7 +225,7 @@
 
         // Nest Hubで曲を再生
         async function playLastMusic() {
-            if (!lastMusicData || !lastMusicData.url) {
+            if (!lastMusicData || !lastMusicData.content_id) {
                 alert('再生する曲が見つかりません');
                 return;
             }
@@ -234,7 +234,7 @@
             document.getElementById('musicButton').disabled = true;
 
             try {
-                const response = await fetch(`http://192.168.11.21:8081/api/cast_music?url=${encodeURIComponent(lastMusicData.url)}`);
+                const response = await fetch(`http://192.168.11.21:8081/api/cast_music?content_id=${encodeURIComponent(lastMusicData.content_id)}`);
                 const data = await response.json();
                 
                 if (data.status === 'success') {

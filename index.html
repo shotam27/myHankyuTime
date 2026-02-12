@@ -138,6 +138,40 @@
             font-size: 16px;
             color: #666;
         }
+
+        .music-button {
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 20px;
+            background: linear-gradient(45deg, #f00, #ff6b6b);
+            color: #fff;
+            border: 2px solid #ff0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+
+        .music-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #f00;
+        }
+
+        .music-button:active {
+            transform: scale(0.95);
+        }
+
+        .music-button:disabled {
+            background: #666;
+            cursor: not-allowed;
+            border-color: #444;
+        }
+
+        .music-info {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #ff6b6b;
+        }
     </style>
 </head>
 <body>
@@ -154,11 +188,76 @@
             <span>読み込み中...</span>
         </div>
         <div class="time-until" id="timeUntil"></div>
+        <button class="music-button" id="musicButton" onclick="playLastMusic()">🎵 前回の曲を再生</button>
+        <div class="music-info" id="musicInfo"></div>
     </div>
     <div class="garbage-day" id="garbageDay"></div>
     <div class="data-source">平日・休日自動判別</div>
     <div class="last-update" id="lastUpdate"></div>
 
     <script src="app.js"></script>
+    <script>
+        // YouTube Music再生機能
+        let lastMusicData = null;
+
+        // 最後に再生された曲の情報を取得
+        async function fetchLastMusic() {
+            try {
+                const response = await fetch('http://192.168.11.21:8081/api/last_played');
+                const data = await response.json();
+                
+                if (data.error) {
+                    console.error('Error:', data.error);
+                    document.getElementById('musicInfo').textContent = '再生履歴なし';
+                    document.getElementById('musicButton').disabled = true;
+                    return;
+                }
+                
+                lastMusicData = data;
+                document.getElementById('musicInfo').textContent = `${data.title} - ${data.artist}`;
+                document.getElementById('musicButton').disabled = false;
+            } catch (error) {
+                console.error('Fetch error:', error);
+                document.getElementById('musicInfo').textContent = 'データ取得エラー';
+                document.getElementById('musicButton').disabled = true;
+            }
+        }
+
+        // Nest Hubで曲を再生
+        async function playLastMusic() {
+            if (!lastMusicData || !lastMusicData.url) {
+                alert('再生する曲が見つかりません');
+                return;
+            }
+
+            document.getElementById('musicButton').textContent = '再生中...';
+            document.getElementById('musicButton').disabled = true;
+
+            try {
+                const response = await fetch(`http://192.168.11.21:8081/api/cast_music?url=${encodeURIComponent(lastMusicData.url)}`);
+                const data = await response.json();
+                
+                if (data.status === 'success') {
+                    document.getElementById('musicButton').textContent = '🎵 前回の曲を再生';
+                    setTimeout(() => {
+                        document.getElementById('musicButton').disabled = false;
+                    }, 3000);
+                } else {
+                    alert('再生エラー: ' + data.error);
+                    document.getElementById('musicButton').textContent = '🎵 前回の曲を再生';
+                    document.getElementById('musicButton').disabled = false;
+                }
+            } catch (error) {
+                alert('通信エラー: ' + error.message);
+                document.getElementById('musicButton').textContent = '🎵 前回の曲を再生';
+                document.getElementById('musicButton').disabled = false;
+            }
+        }
+
+        // ページ読み込み時に曲情報を取得
+        fetchLastMusic();
+        // 30秒ごとに更新
+        setInterval(fetchLastMusic, 30000);
+    </script>
 </body>
 </html>

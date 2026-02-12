@@ -225,7 +225,7 @@
 
         // Nest Hubで曲を再生
         async function playLastMusic() {
-            if (!lastMusicData || !lastMusicData.content_id) {
+            if (!lastMusicData || !lastMusicData.title || !lastMusicData.artist) {
                 alert('再生する曲が見つかりません');
                 return;
             }
@@ -234,7 +234,7 @@
             document.getElementById('musicButton').disabled = true;
 
             try {
-                const response = await fetch(`http://192.168.11.21:8081/api/cast_music?content_id=${encodeURIComponent(lastMusicData.content_id)}`);
+                const response = await fetch(`http://192.168.11.21:8081/api/cast_music?title=${encodeURIComponent(lastMusicData.title)}&artist=${encodeURIComponent(lastMusicData.artist)}`);
                 const data = await response.json();
                 
                 if (data.status === 'success') {
@@ -243,7 +243,7 @@
                         document.getElementById('musicButton').disabled = false;
                     }, 3000);
                 } else {
-                    alert('再生エラー: ' + data.error);
+                    alert('再生エラー: ' + (data.error || 'Unknown error'));
                     document.getElementById('musicButton').textContent = '🎵 前回の曲を再生';
                     document.getElementById('musicButton').disabled = false;
                 }
